@@ -22,6 +22,7 @@ public class MiServicio extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         tarea = new TareaAsincrona();
+        tarea.setContexto(this);
         tarea.execute();
         return START_STICKY;
     }
